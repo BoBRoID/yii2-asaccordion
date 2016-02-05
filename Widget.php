@@ -32,7 +32,7 @@ class Widget extends \yii\base\Widget{
         $this->clientOptions = array_merge($this->defaultClientOptions, $this->clientOptions);
 
         if(empty($this->id)) {
-            $this->options['id'] = 'asaccordion-' . $this->getId();
+            $this->id = 'asaccordion-' . $this->getId();
         }
 
         $this->defaultContainerOptions['class'] = $this->clientOptions['namespace'].' '.$this->clientOptions['namespace'].'--basic'.' '.$this->clientOptions['namespace'].'--vertical';
