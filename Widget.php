@@ -1,5 +1,4 @@
 <?php
-use yii\helpers\Html;
 /**
  * Created by PhpStorm.
  * User: bobroid
@@ -9,6 +8,7 @@ use yii\helpers\Html;
 
 namespace bobroid\asaccordion;
 
+use yii\helpers\Html;
 
 class Widget extends \yii\base\Widget{
 
