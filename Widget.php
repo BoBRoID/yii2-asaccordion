@@ -26,7 +26,8 @@ class Widget extends \yii\base\Widget{
     const TYPE_BASIC = 'basic';
 
     private $defaultClientOptions = [
-        'namespace' =>  '-accordion'
+        'namespace' =>  '-accordion',
+        'direction' =>  self::DIRECTION_HORIZONTAL
     ];
 
     private $defaultContainerOptions = [
@@ -85,15 +86,12 @@ class Widget extends \yii\base\Widget{
             throw new \ErrorException("У каждого элемента должен быть content!");
         }
 
-        $result .= Html::tag('span', $item['header'], [
-            'class' =>  $this->clientOptions['namespace'].'__heading'
-        ]);
-
-        $result .= Html::tag('span', $item['content'], [
-            'class' =>  $this->clientOptions['namespace'].'__expander'
-        ]);
-
-        return Html::tag('li', $result, array_merge($this->defaultItemOptions, $item['options']));
+        return Html::tag('li', Html::tag('span', $item['header'], [
+                'class' =>  $this->clientOptions['namespace'].'__heading'
+            ]).Html::tag('span', $item['content'], [
+                'class' =>  $this->clientOptions['namespace'].'__expander'
+            ]),
+            array_merge($this->defaultItemOptions, $item['options']));
     }
 
 }
