@@ -16,13 +16,22 @@ class Widget extends \yii\base\Widget{
     public $id;
     public $containerOptions = [];
     public $items = [];
+    public $direction = self::DIRECTION_HORIZONTAL;
+    public $type = self::TYPE_BOX;
+
+    const DIRECTION_HORIZONTAL = 'horizontal';
+    const DIRECTION_VERTICAL = 'vertical';
+
+    const TYPE_BOX = 'box';
+    const TYPE_BASIC = 'basic';
 
     private $defaultClientOptions = [
         'namespace' =>  '-accordion'
     ];
 
     private $defaultContainerOptions = [
-        'data-direction'    =>  'vertical'
+        'data-direction'    =>  self::DIRECTION_HORIZONTAL,
+
     ];
 
     private $defaultItemOptions = [
@@ -35,7 +44,7 @@ class Widget extends \yii\base\Widget{
             $this->id = 'asaccordion-' . $this->getId();
         }
 
-        $this->defaultContainerOptions['class'] = $this->clientOptions['namespace'].' '.$this->clientOptions['namespace'].'--basic'.' '.$this->clientOptions['namespace'].'--vertical';
+        $this->defaultContainerOptions['class'] = $this->clientOptions['namespace'].' '.$this->clientOptions['namespace'].'--'.$this->type.' '.$this->clientOptions['namespace'].'--'.$this->direction;
         $this->defaultItemOptions['class'] = $this->clientOptions['namespace'].'__panel';
 
         $this->containerOptions = array_merge($this->defaultContainerOptions, $this->containerOptions);

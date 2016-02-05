@@ -15,7 +15,7 @@ class AsaccordionAsset extends AssetBundle
     public $sourcePath = '@vendor/bobroid/yii2-asaccordion/assets';
 
     public $css = [
-        'css/sweetalert.css',
+        'css/asaccordion.css',
     ];
 
     public $js = [
