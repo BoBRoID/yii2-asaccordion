@@ -8,6 +8,7 @@
 
 namespace bobroid\asaccordion;
 
+use yii\web\AssetBundle;
 
 class AsaccordionAsset extends AssetBundle
 {
