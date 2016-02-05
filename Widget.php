@@ -15,6 +15,7 @@ class Widget extends \yii\base\Widget{
     public $clientOptions;
     public $id;
     public $containerOptions;
+    public $items;
 
     private $defaultClientOptions = [
         'namespace' =>  '-accordion'
