@@ -88,7 +88,7 @@ class Widget extends \yii\base\Widget{
 
         return Html::tag('li', Html::tag('span', $item['header'], [
                 'class' =>  $this->clientOptions['namespace'].'__heading'
-            ]).Html::tag('span', $item['content'], [
+            ]).Html::tag('div', $item['content'], [
                 'class' =>  $this->clientOptions['namespace'].'__expander'
             ]),
             array_merge($this->defaultItemOptions, $item['options']));
